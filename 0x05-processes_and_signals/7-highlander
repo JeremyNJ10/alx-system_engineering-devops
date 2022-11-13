@@ -1,13 +1,8 @@
-able File  11 lines (10 sloc)  266 Bytes
-
 #!/usr/bin/env bash
-# displays To infinity and beyond indefinitely
-# With a sleep 2 in between each iteration
-# I am invincible!!! when receiving a SIGTERM signal
-
-while true
-do 
+#Bash script that displays a message when it is terminated
+trap 'echo "I am invincible!!!"' SIGTERM
+while :
+do
 	echo "To infinity and beyond"
 	sleep 2
-	trap 'echo "I am invincible!!!"' SIGTERM
 done
